@@ -24,3 +24,4 @@ cd client
 pip install -r requirement.txt
 py app.py
 ```
+also you need to use flask and pip to run this so you should install them before you run anything in this project
