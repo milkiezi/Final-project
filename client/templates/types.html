@@ -1,0 +1,109 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+
+{% if type %}
+<div class="col-sm-12 text-center"><h1>{{type}}</h1><br></div>
+{% endif %}
+
+{% for i in allPokemon %}
+<div class="col-sm-3">
+        <div class="card bg-dark mx-auto border-primary rounded" style="width: 95%; margin-bottom: 50px;">
+                <a class="text-dark" style="text-decoration: none;" href="/pokemon?id={{i.Id}}">">
+                        <div class="card-header">
+                                <img class="card-img-top" src="{{i.url}}" style="padding: 20px;"></div>
+                        <div class="card-body border border-primary">
+                                <h4 class="card-text text-info">{{i.Id}}</h4>
+                                <h3 class="card-text">{{i.name}}</h3>
+                                <div class="text-center"><br><br>
+                                        <h3 class="text-center">
+                                        {% if i.type1 == 'Bug' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ccff00;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Dragon' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #fd5b78;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Electric' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ffcc33;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Fairy' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff6eff;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Fighting' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff6037;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Fire' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #FF355E;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Ghost' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #d3d3d3;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Grass' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #66ff66;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Ground' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #c47926;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Ice' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #15f4ee;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Normal' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ffff66;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Poison' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #A117F2;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Psychic' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff9933;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Rock' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #98999A;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type1 == 'Water' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #50bfe6;">{{i.type1}}</span>                
+                                        {% endif %}
+                                        {% if i.type2 == 'Fairy' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff6eff;">{{i.type2}}</span>                    
+                                        {% endif %}   
+                                        {% if i.type2 == 'Fighting' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff6037;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Flying' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #aaf0d1;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Grass' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #66ff66;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Ground' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #c47926;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Ice' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #15f4ee;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Poison' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #A117F2;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Psychic' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff9933;">{{i.type2}}</span>                    
+                                        {% endif %}   
+                                        {% if i.type2 == 'Rock' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #98999A;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Steel' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #001eff;">{{i.type2}}</span>                    
+                                        {% endif %}
+                                        {% if i.type2 == 'Water' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #50bfe6;">{{i.type2}}</span>                    
+                                        {% endif %}      
+                                        {% if i.type2 == '-' %}        
+                                                <span class="badge badge-pill p-2" style="background-color: #ff00cc;">{{i.type2}}</span>                    
+                                        {% endif %}                
+                                        </h3>
+                                </div>
+                        </div>
+                </a>
+        </div>
+</div>
+{% endfor %}
+
+{% endblock %}

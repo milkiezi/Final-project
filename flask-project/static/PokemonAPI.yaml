@@ -1,0 +1,292 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Pokemon Generation One API
+servers:
+  - url: http://localhost:8000
+paths:
+  /auth/token:
+    post:
+      tags:
+        - Authentication
+      summary: Authentication
+      description: Token-based Authentication
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+                - username
+                - password
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Token"
+        '400':
+          description: Invalid Parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthError"
+        '404':
+          description: Username or Password Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthError"
+  /pokemon:
+    get:
+      tags:
+        - Pokemon
+      summary: Pokemon API
+      description: |
+        **Type1** : Bug, Dragon, Electric, Fairy, Fighting, Fire, Ghost, Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Water
+        
+        **Type2** : Fairy, Fighting, Flying, Grass, Ground, Ice, Poison, Psychic, Rock, Steel, Water
+      parameters:
+      - name: id
+        in: query
+        description: Pokemon ID
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: Pokemon Name
+        schema:
+          type: string
+      - name: type1
+        in: query
+        description: Pokemon's Type1
+        schema:
+          type: string
+      - name: type2
+        in: query
+        description: Pokemon's Type2
+        schema:
+          type: string   
+      responses:
+        '200':
+          description: Successful Operation Search
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pokemon"
+        '404':
+          description: Pokemon Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: not found
+    post:
+      tags:
+        - Pokemon
+      summary: Create Pokemon
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pokemon"
+      responses:
+        '200':
+          description: Successful Create Pokemon
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pokemon"
+        '401':
+          description: Unauthorize
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Token Has Expired
+    put:
+      tags:
+        - Pokemon
+      summary: Edit Pokemon
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EditPokemon"
+      responses:
+        '200':
+          description: Successful Edit Pokemon
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pokemon"
+        '401':
+          description: Unauthorize
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Token Has Expired
+        '404':
+          description: Pokemon Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not Found
+                    
+  /pokemon/delete/{name}:
+    delete:
+      tags:
+        - Pokemon
+      summary: Delete Pokemon
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: name
+          in: path
+          description: Pokemon Name
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful Delete Pokemon
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pokemon"
+        '401':
+          description: Unauthorize
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Token Has Expired
+        '404':
+          description: Pokemon Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Not Found
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+  schemas:
+    Token:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+          format: int64
+        refresh_token:
+          type: string
+          
+    AuthError:
+      type: object
+      properties:
+        error:
+          type: string
+        error_description:
+          type: string
+          
+    Pokemon:
+      type: object
+      properties:
+        Id:
+          type: string
+        Name:
+          type: string
+        Type1:
+          type: string
+        Type2:
+          type: string
+        Total:
+          type: number
+        HP:
+          type: number
+        Attack:
+          type: number
+        Defense:
+          type: number
+        Sp.Atk:
+          type: number
+        Sp.Def:
+          type: number
+        Speed:
+          type: number
+        Legendary:
+          type: string
+        Url:
+          type: string            
+
+    EditPokemon:
+      type: object
+      properties:
+        key:
+          type: string
+        Name:
+          type: string
+        Type1:
+          type: string
+        Type2:
+          type: string
+        Total:
+          type: number
+        HP:
+          type: number
+        Attack:
+          type: number
+        Defense:
+          type: number
+        Sp.Atk:
+          type: number
+        Sp.Def:
+          type: number
+        Speed:
+          type: number
+        Legendary:
+          type: string
+        Url:
+          type: string            

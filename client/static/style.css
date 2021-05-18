@@ -1,0 +1,61 @@
+div.container-fluid {
+    background-image: url(https://getwallpapers.com/wallpaper/full/d/1/8/535189.jpg);
+}
+span.badge {
+    width: 38%;
+} 
+h1  { 
+    color: white; 
+    font-family: Fantasy;
+}
+p, input { 
+    font-size: 17px; 
+    color: white;
+}
+h2, h3, h4 {
+    color: white; 
+    text-shadow: 0.5px 0.5px 5px black;
+}
+h3.card-text {
+  color: white; 
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:link, footer p, footer a:link{ 
+    color: #d9d9d9 !important; 
+}
+.navbar-nav  li a:link { 
+    font-weight: bold; 
+}
+ul.dropdown-menu li a:link { 
+    font-weight: normal !important; 
+    margin-left: 25px;
+    font-size: 13px; 
+}
+.navbar-nav  li a:hover { 
+    color: DarkTurquoise !important; 
+}
+.navbar-nav  li { 
+    padding-right: 25px; 
+}
+.card-header {
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 95%;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/foodyummy-1f7fe.appspot.com/o/image%20(1).png?alt=media&token=39b2c1be-58e3-447a-8f18-b529aab62292');
+  
+}

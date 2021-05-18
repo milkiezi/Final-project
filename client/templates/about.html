@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<div class="col-sm-12 text-center"><h1>About Us</h1><br></div>
+
+{% for i in students %}
+<div class="col-sm-4 text-center">
+                <div class="card bg-dark border-primary mx-auto" style="width: 75%; margin-bottom: 40px;">
+                        <img class="card-img-top" src="{{i.urlImg}}">
+                        <div class="card-body border border-primary">
+                                <b><p class="card-text">{{i.first_name}} {{i.last_name}}</p></b>
+                                <b><p class="card-text">({{i.student_id}})</p></b>
+                        </div>
+                </div>
+</div>
+{% endfor %}
+
+{% endblock %}
