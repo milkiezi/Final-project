@@ -7,7 +7,7 @@ Sakunit Iamenetre 62102010188
 
 
 
-to use this you have to install by clone this git to your pc      
+to use this you have to install by clone this to your pc      
 **DO NOT DOWNLOAD ZIP**  
 go to flask-project and install requirement.txt then start python
 
@@ -24,4 +24,4 @@ cd client
 pip install -r requirement.txt
 py app.py
 ```
-also you need to use flask and pip to run this so you should install them before you run anything in this project
+also you need to use flask and pip to run this so you should install them before you run anything
