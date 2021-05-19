@@ -18,7 +18,7 @@ go to flask-project and install requirement.txt then start python
 ```
 cd flask-project
 pip install -r requirement.txt
-py app.py //Or run Flask
+py app.py //Or run with Flask
 ```
 after that open new terminal
 go to client and install requirement.txt then start python
@@ -26,6 +26,6 @@ go to client and install requirement.txt then start python
 ```
 cd client
 pip install -r requirement.txt
-py app.py //Or run Flask
+py app.py //Or run with Flask
 ```
 also you need to use flask and pip to run this so you should install them before you run anything
