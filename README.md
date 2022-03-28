@@ -1,4 +1,4 @@
-# Pokemon Data Center (CP353 Final Project, 3rd Year)  
+# Pokemon Data Center (CP353 Final Project, 2nd Year/Semester 2)  
 Member
 1) Bongkod buasri 62102010171  
 2) Busarakham leadpattanchat 62102010172  
