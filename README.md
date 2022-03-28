@@ -1,5 +1,5 @@
 # Pokemon Data Center (Final Project)  
-member  
+Member  
 Bongkod buasri 62102010171  
 Busarakham leadpattanchat 62102010172  
 Sakunit Iamenetre 62102010188
